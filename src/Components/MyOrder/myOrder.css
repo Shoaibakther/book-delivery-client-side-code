@@ -20,22 +20,14 @@
     margin: 20px;
 }
 .order-section form{
-    width: 95%;
+    width: 100%;
     margin: auto;
-    padding: 50px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
    background-color:rgb(181, 177, 243);
     justify-content: center;
     align-items: center;
-}
-.order-section form input{
-    padding: 5px;
-     width: 90%;
-     margin-bottom: 10px;
-     border-bottom: none;
-     border: 1px solid brown;
-     border-radius: 5px;
 }
 
 /* Make it responsive */
@@ -43,9 +35,15 @@
     .order-container{
         grid-template-columns: repeat(1, 1fr);
     }
+    .main-order{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 @media only screen and (min-width:689px) and (max-width: 991px){
     .order-container{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .main-order{
+         grid-template-columns: repeat(1, 1fr);
     }
 }

@@ -1,0 +1,12 @@
+.main-subs{
+    width: 93%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: thistle;
+}
+.first, .second{
+    
+    width: 70%;
+    margin: auto;
+}

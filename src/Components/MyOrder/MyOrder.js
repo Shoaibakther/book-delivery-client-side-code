@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Col, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Context/useAuth';
 import './myOrder.css'
@@ -30,7 +30,22 @@ const MyOrder = () => {
                   reset();
           }
       })
-  }
+    }
+     const handleDelete = id => {
+        const url = `https://warm-sierra-60558.herokuapp.com/myOrders/${id}`
+        fetch(url, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    alert('Deleted Successfully')
+                const remaining = orders.filter(service =>service._id !== id)
+                setOrders(remaining)
+                }
+                
+        })
+    }
     
     return (
         <div className="order">
@@ -45,10 +60,12 @@ const MyOrder = () => {
   <Card.Body>
                     <Card.Title>{service?.name}</Card.Title>
     <Card.Text>
-      {service?.description.slice(0, 150)}
-    </Card.Text>
-<button  className="btn btn-danger">Delete Order</button>
-{/* <button  className="btn btn-success">{service?.status}</button> */}
+ {service?.description.slice(0, 150)}
+     
+</Card.Text>
+<button className="m-2  bg-primary">{service?.status}</button> <br />
+<Button onClick={() =>handleDelete(service._id)} variant="danger">Delete</Button>
+
   </Card.Body>
 </Card>
         </div>
@@ -56,19 +73,57 @@ const MyOrder = () => {
                 }
             </div>
                 <div className="order-section">
-                    <h1>Please fill up the form</h1>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                        <input name="firstName" {...register("name", { required: true, maxLength: 40 })}
-                            
-                            
-      placeholder="Customers Name:"          />
-      <input {...register("email", )} placeholder="Customers Email:"/>
-               
-                <input {...register("number", )} placeholder="Phone Number" />
-                <input {...register("address", )} placeholder="Delivery address" />
-                
-      <input type="submit"value="Place Order" />
-    </form>
+                    <h1>Customers Information</h1>
+               <Form>
+      <Row className="mb-3">
+      <Form.Group as={Col} controlId="formGridPassword">
+      <Form.Label>Customers Name:</Form.Label>
+      <Form.Control value={user?.displayName} type="text" placeholder="Your Name" />
+    </Form.Group>
+    <Form.Group as={Col} controlId="formGridEmail">
+      <Form.Label>Customers Email:</Form.Label>
+      <Form.Control value={user?.email} type="email" placeholder="Your email" />
+    </Form.Group>
+  </Row>
+
+  <Form.Group className="mb-3" controlId="formGridAddress1">
+    <Form.Label>Address</Form.Label>
+    <Form.Control placeholder="1234 Main St" />
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formGridAddress2">
+    <Form.Label>Address 2</Form.Label>
+    <Form.Control placeholder="Apartment, studio, or floor" />
+  </Form.Group>
+
+  <Row className="mb-3">
+    <Form.Group as={Col} controlId="formGridCity">
+      <Form.Label>City</Form.Label>
+      <Form.Control />
+    </Form.Group>
+
+    <Form.Group as={Col} controlId="formGridState">
+      <Form.Label>State</Form.Label>
+      <Form.Select defaultValue="Choose...">
+        <option>BD</option>
+        <option>ID</option>
+      </Form.Select>
+    </Form.Group>
+
+    <Form.Group as={Col} controlId="formGridZip">
+      <Form.Label>Zip</Form.Label>
+      <Form.Control />
+    </Form.Group>
+  </Row>
+
+  <Form.Group className="mb-3" id="formGridCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
                 </div>
            </div>
       </div>
