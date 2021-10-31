@@ -1,0 +1,24 @@
+.blog{
+    width: 60%;
+    margin: auto;
+    border: dotted;
+}
+.blog h2{
+    text-decoration:underline;
+    text-align: center;
+    padding: 20px;
+}
+.blog img{
+    width: 70%;
+    padding: 50px;
+}
+.blog p{
+    
+    padding: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.blog h3{
+    text-align: left;
+    padding: 20px;
+}

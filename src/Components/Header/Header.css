@@ -1,10 +1,11 @@
 #nav-item{
-    font-size: 20px;
+    font-size: 16px;
     align-items: baseline;
-   font-weight: bold;
+   font-weight: 500;
+   padding-top: 20px;
 }
 .header{
-    font-size: 35px;
+    font-size: 25px;
     font-weight: bold;
 
 }

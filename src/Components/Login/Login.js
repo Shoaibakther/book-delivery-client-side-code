@@ -7,7 +7,7 @@ const Login = () => {
     const { signInUsingGoogle } = useAuth();
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.form || '/home'
+    const redirect_uri = location.state?.from || '/home'
     const handleGoogleLogin = () => {
         signInUsingGoogle()
       .then(result => {
@@ -16,6 +16,7 @@ const Login = () => {
     }
     return (
         <div>
+            <h2>Please Login</h2>
             <Button onClick={handleGoogleLogin} className="btn-regular btn-primary mb-5">Google Sign In</Button>
         </div>
     );

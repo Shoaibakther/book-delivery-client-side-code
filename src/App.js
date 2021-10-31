@@ -15,6 +15,7 @@ import AddService from './Components/AddServices/AddServices';
 
 import ManageServices from './Components/ManageServices/ManageServices';
 import MyOrder from './Components/MyOrder/MyOrder';
+import Blog from './Components/Blog/Blog';
 
 function App() {
   return (
@@ -32,11 +33,13 @@ function App() {
           <Route path="/services">
             <Services></Services>
             </Route>
-            
+            <Route path="/blog">
+              <Blog></Blog>
+            </Route>
             <Route path="/manageServices">
               <ManageServices></ManageServices>
             </Route>
-          <PrivateRoute path="/myOrder/:serviceId">
+          <PrivateRoute path="/myOrder">
             <MyOrder></MyOrder>
           </PrivateRoute>
           

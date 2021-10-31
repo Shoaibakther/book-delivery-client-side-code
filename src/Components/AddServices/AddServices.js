@@ -7,7 +7,7 @@ import './AddServices.css';
 const AddService = () => {
        const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
-      axios.post('http://localhost:5000/services', data)
+      axios.post('https://warm-sierra-60558.herokuapp.com/services', data)
           .then(res => {
               if (res.data.insertedId) {
                   alert("Added Successfully")
@@ -18,9 +18,9 @@ const AddService = () => {
    
     return (
         <div className="add-service">
-            <h1>Please add a service</h1>
+            <h1>Please Add A Service</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("name", { required: true, maxLength: 20 })}
+                <input {...register("name", { required: true, maxLength: 40 })}
       placeholder="Name:"          />
       <input {...register("description", )} placeholder="Description"/>
                

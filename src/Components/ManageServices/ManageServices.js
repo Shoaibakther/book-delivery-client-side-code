@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
+import './ManageServices.css'
 
 const ManageServices = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://warm-sierra-60558.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
     const handleDelete = id => {
-        const url = `http://localhost:5000/services/${id}`
+        const url = `https://warm-sierra-60558.herokuapp.com/services/${id}`
         fetch(url, {
             method: 'DELETE'
         })
@@ -24,25 +25,26 @@ const ManageServices = () => {
         })
     }
     return (
-        <div>
+        <div className="manage">
             <h2>Manage Services</h2>
-            {
+            <div className="manage-container">
+                   {
                 services.map(service => <div key={service._id}>
                     {/* <h3>{service.name}</h3>
                     <button onClick={() =>handleDelete(service._id)}>Delete</button> */}
-                    <Card style={{ width: '18rem' }}>
+                    <Card border="primary" style={{ width: '18rem' }}>
   <Card.Img variant="top" src={service.img} />
   <Card.Body>
                             <Card.Title>{service.name}</Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      {service?.description.slice(0, 150)}
     </Card.Text>
     <Button onClick={() =>handleDelete(service._id)} variant="primary">Delete</Button>
   </Card.Body>
 </Card>
                 </div>)
             }
+         </div>
         </div>
     );
 };
