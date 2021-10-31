@@ -2,6 +2,7 @@ import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../Context/useAuth';
+import './Login.css'
 
 const Login = () => {
     const { signInUsingGoogle } = useAuth();
@@ -15,7 +16,7 @@ const Login = () => {
     })
     }
     return (
-        <div>
+        <div className="login">
             <h2>Please Login</h2>
             <Button onClick={handleGoogleLogin} className="btn-regular btn-primary mb-5">Google Sign In</Button>
         </div>

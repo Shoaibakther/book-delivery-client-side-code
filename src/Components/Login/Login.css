@@ -1,0 +1,15 @@
+.login{
+    width: 30%;
+    border-radius: 20px;
+    margin:50px auto;
+    background-color: rgb(100, 216, 237);
+}
+.login h2{
+    padding-top: 30px;
+    margin-bottom: 25px;
+    border-bottom: 5px solid slateblue;
+}
+.login button{
+    padding: 15px;
+    border-radius: 10px;
+}

@@ -16,7 +16,7 @@ const Banner = () => {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>Bangladesh Cancer Institute</h3>
+      <h3>"When in doubt, go to the library."</h3>
       
     </Carousel.Caption>
   </Carousel.Item>
@@ -28,7 +28,7 @@ const Banner = () => {
     />
 
     <Carousel.Caption>
-      <h3>Bangladesh Cancer Institute</h3>
+      <h3>The library was a little old shabby place. </h3>
       
     </Carousel.Caption>
   </Carousel.Item>
@@ -40,7 +40,7 @@ const Banner = () => {
     />
 
     <Carousel.Caption>
-      <h3>Bangladesh Cancer Institute</h3>
+      <h3>Nothing is more impotent than an unread library</h3>
       
     </Carousel.Caption>
   </Carousel.Item>

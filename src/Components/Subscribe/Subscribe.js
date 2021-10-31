@@ -13,9 +13,9 @@ const Subscribe = () => {
             <div className="second">
                 <h5>Let's keep in touch</h5>
                 <p>Nevada, USA <br />
-Some random address here <br />
+                    Some random address here <br />
                     Phone: 1-800-0000</p>
-                <p>contact@mycompany.com</p>
+                <p>bookstore.com</p>
             </div>
         </div>
     );

@@ -9,7 +9,7 @@ const Header = () => {
   const { user, logOut } = useAuth();
     return (
         <div>
-            <Navbar bg="muted" variant="pills" defaultActiveKey="/home" fixed="top"  sticky="top" collapseOnSelect expand="lg">
+            <Navbar className="main-nav" variant="pills" defaultActiveKey="/home" fixed="top"  sticky="top" collapseOnSelect expand="lg">
     <Container>
     <Navbar.Brand className="header text-danger" href="#home">Book Collection</Navbar.Brand>
      <Navbar.Toggle />
@@ -23,9 +23,9 @@ const Header = () => {
                   {user?.email &&
                  <Nav.Link as={HashLink} to="/addService">Add Service</Nav.Link>
               }
-                  {user?.email &&
+                 
                 <Nav.Link as={HashLink} to="/myOrder">My order</Nav.Link>
-         }
+        
                
       {
                 user?.email ?

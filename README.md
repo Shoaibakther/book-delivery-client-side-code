@@ -11,14 +11,15 @@ I hosted this website in Firebase. Please visit my site:
  
 ## Features
 
-- Created by React-Router app
-- HTML, CSS, React-Bootstraps
-- React Router
-- React Hooks
 - Name, Title, Details
-- Home, Service, addService, mange service, delete service, Login
+- HTML, CSS, React-Bootstraps
+- Service, addService, mange service, delete service, Login
+- React Hooks
+- Cutomers information
+- Accordian
 - Firebase Authentication with Google
 - Book information
+- Shipping delivary
 
   
 ## 🔗 github profile link
@@ -29,3 +30,13 @@ I hosted this website in Firebase. Please visit my site:
 Javascript, HTML, CSS, Bootstraps , React, React-router, Tailwind CSS
 , React-router
   
+## Installation
+
+```bash
+  1) Firebase
+  2) React Bootstrap
+  3) React hook form
+  4) React hash link
+  5)React Installation
+```
+    
